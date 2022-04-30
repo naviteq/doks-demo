@@ -2,7 +2,7 @@ variable "cluster_version" {
   type = string
 }
 
-variable "worker_size" {
+variable "worker_type" {
   type = string
 }
 

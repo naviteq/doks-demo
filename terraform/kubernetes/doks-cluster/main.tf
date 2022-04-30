@@ -12,10 +12,6 @@ provider "digitalocean" {
   # DIGITALOCEAN_TOKEN, DIGITALOCEAN_ACCESS_TOKEN
 }
 
-data "digitalocean_kubernetes_versions" "current" {
-  version_prefix = var.cluster_version
-}
-
 resource "digitalocean_kubernetes_cluster" "primary" {
   name         = var.cluster_name
   region       = var.cluster_region
@@ -25,7 +21,7 @@ resource "digitalocean_kubernetes_cluster" "primary" {
   node_pool {
     name       = "autoscale-workers-pool"
     auto_scale = true
-    size       = var.worker_size
+    size       = var.worker_type
     min_nodes  = var.workers_count_min
     max_nodes  = var.workers_count_max
   }

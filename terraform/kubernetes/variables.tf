@@ -8,11 +8,11 @@ variable "workers_count_max" {
 }
 
 variable "workers_count_min" {
-  default = 1
+  default = 2
 }
 
-variable "worker_size" {
-  default = "s-1vcpu-2gb"
+variable "worker_type" {
+  default = "s-4vcpu-8gb"
 }
 
 variable "cluster_option_slug" {

@@ -1,19 +1,11 @@
-terraform {
-  required_providers {
-    digitalocean = {
-      source  = "digitalocean/digitalocean"
-      version = ">= 2.19.0"
-    }
-    kubernetes = {
-      source = "hashicorp/kubernetes"
-      version = ">= 2.0.0"
-    }
-    helm = {
-      source  = "hashicorp/helm"
-      version = ">= 2.0.1"
-    }
-  }
-}
+#terraform {
+#  required_providers {
+#    digitalocean = {
+#      source  = "digitalocean/digitalocean"
+#      version = ">= 2.19.0"
+#    }
+#  }
+#}
 
 resource "random_id" "cluster_name" {
   byte_length = 5
@@ -32,5 +24,5 @@ module "doks-cluster" {
 
   workers_count_max   = var.workers_count_max
   workers_count_min   = var.workers_count_min
-  worker_size         = var.worker_size
+  worker_type         = var.worker_type
 }
