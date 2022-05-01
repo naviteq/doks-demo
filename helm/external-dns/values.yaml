@@ -1,0 +1,16 @@
+digitalocean:
+  ## @param digitalocean.apiToken When using the DigitalOcean provider, `DO_TOKEN` to set (optional)
+  ##
+  apiToken: ""
+  ## @param digitalocean.secretName Use an existing secret with key "digitalocean_api_token" defined.
+  ## This ignores digitalocean.apiToken
+  ##
+  secretName: "do-secret"
+
+provider: digitalocean
+
+interval: "1m"
+
+policy: sync # or upsert-only
+
+domainFilters: [ 'doks-demo.naviteq.io' ]

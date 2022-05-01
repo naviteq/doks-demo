@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: greg@funtoken.io
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-prod-dns01-account-key
+    solvers:
+    - selector:
+        dnsZones:
+          - "doks-demo.naviteq.io"
+      dns01:
+        digitalocean:
+          tokenSecretRef:
+            name: digitalocean-dns
+            key: access-token

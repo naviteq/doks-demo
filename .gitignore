@@ -30,3 +30,6 @@ override.tf.json
 .api_token
 
 .terraform.lock.hcl
+
+#Do not add to repo rendered secretm
+secret.yaml
