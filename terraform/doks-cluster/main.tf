@@ -12,8 +12,17 @@ provider "digitalocean" {
   # DIGITALOCEAN_TOKEN, DIGITALOCEAN_ACCESS_TOKEN
 }
 
+resource "random_id" "cluster_name" {
+  byte_length = 5
+}
+
+locals {
+  cluster_name = "tf-k8s-${random_id.cluster_name.hex}"
+}
+
+
 resource "digitalocean_kubernetes_cluster" "primary" {
-  name         = var.cluster_name
+  name         = local.cluster_name
   region       = var.cluster_region
   version      = var.cluster_option_slug
   auto_upgrade = true

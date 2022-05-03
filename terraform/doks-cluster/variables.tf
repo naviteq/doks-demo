@@ -14,10 +14,6 @@ variable "workers_count_max" {
   type = number
 }
 
-variable "cluster_name" {
-  type = string
-}
-
 variable "cluster_region" {
   type = string
 }

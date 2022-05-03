@@ -48,6 +48,6 @@ credentials into the providers.
 This will create the new cluster and the Kubernetes resources in a single apply.
 
 ```
-terraform state rm module.kubernetes-config
+terraform destroy
 terraform apply
 ```

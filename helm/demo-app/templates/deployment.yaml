@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
             - -listen=:80
-            - -text="hello"
+            - -text="hello_from_israeli_cloud_2022_demo"
           ports:
             - name: http
               containerPort: 80
