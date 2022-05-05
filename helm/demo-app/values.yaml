@@ -62,10 +62,10 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 100m
-    memory: 2G
+    memory: 3G
   requests:
     cpu: 100m
-    memory: 2G # This value is set for demo purpose only, we want scheduler to bring up new nodes up
+    memory: 3G # This value is set for demo purpose only, we want scheduler to bring up new nodes up
 
 autoscaling:
   enabled: true
