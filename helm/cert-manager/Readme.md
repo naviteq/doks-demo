@@ -1,16 +1,15 @@
 
 To generate DIGITALOCEAN_TOKEN_BASE64 please run this command:
+
 ```
 DIGITALOCEAN_TOKEN=your_token_here
 DIGITALOCEAN_TOKEN_BASE64=$(echo -n "$DIGITALOCEAN_TOKEN" | base64 -w0)
 ```
 
-In order to install the external DNS you need to run following commands
+In order to allow cert-manager to create DNS records we need to create secret with DO API key, and in order to issue prod grade certificates we need to create ClusterIssuer
 
 ```
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-helm install external-dns bitnami/external-dns --namespace external-dns --create-namespace -f values.yaml
 envsubst < secret-template.yaml > secret.yaml
 kubectl apply -f secret.yaml
+kubectl apply -f ClusterIssuer.yaml
 ```
