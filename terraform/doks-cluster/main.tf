@@ -26,6 +26,7 @@ resource "digitalocean_kubernetes_cluster" "primary" {
   region       = var.cluster_region
   version      = var.cluster_option_slug
   auto_upgrade = true
+  ha           = true
 
   node_pool {
     name       = "autoscale-workers-pool"
