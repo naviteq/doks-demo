@@ -47,13 +47,13 @@ ingress:
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: demo.doks-demo.naviteq.io
+    - host: demo-domain.doks-demo.naviteq.io
       paths:
         - "/"
   tls:
     - secretName: demo-app
       hosts:
-        - demo.doks-demo.naviteq.io
+        - demo-domain.doks-demo.naviteq.io
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
